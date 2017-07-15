@@ -1,0 +1,32 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Element - File Server
+    link(href='/styles/bootstrap.min.css' rel='stylesheet')
+    script(src= '/scripts/main.js' type= 'application/javascript')
+  
+  body
+    div.container
+      h3 Bienvenido a Element FileServer
+      h6 Los siguientes archivos estan disponibles para su descarga:
+      
+      table.table.table-striped
+        thead
+          tr
+            th Nombre
+            th Ruta
+
+        tbody
+          - vacio = dt != undefined;
+          if vacio
+            each f in dt
+              - archivo = f.type == "file";
+               
+              if archivo
+                tr
+                  td
+                    a(href= '/descargar/#{f.url}' #{f.name}) #{f.name}
+                  td
+                    p #{f.path}  
+                    
