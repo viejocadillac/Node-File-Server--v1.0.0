@@ -7,16 +7,15 @@ const config = require('./config.json');
 
 
 // Configure
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/scripts', express.static(path.join(__dirname, '/public/scripts')));
 app.use('/styles', express.static(path.join(__dirname, '/public/stylesheets')));
-app.use('/descargar',express.static(path.join(config.pathToShare)));
 
 app.use('/', index);
 
-server.listen(3000, function(){
-  var ip = server.address().address;
+server.listen(3000, ()=>{
+  let ip = server.address().address;
 
   if(ip == '::'){
     ip = '127.0.0.1'

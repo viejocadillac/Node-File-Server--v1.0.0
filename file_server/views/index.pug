@@ -1,10 +1,10 @@
-html
+eebhtml
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title Element - File Server
-    link(href='/styles/bootstrap.min.css' rel='stylesheet')
-    script(src= '/scripts/main.js' type= 'application/javascript')
+    link(href='http://192.168.1.240:3000/styles/bootstrap.min.css' rel='stylesheet')
+    script(src= 'http://192.168.1.240:3000/scripts/main.js' type= 'application/javascript')
   
   body
     div.container
@@ -22,11 +22,18 @@ html
           if vacio
             each f in dt
               - archivo = f.type == "file";
+              - directorio = f.type == "directory";
                
               if archivo
                 tr
                   td
-                    a(href= '/descargar/#{f.url}' #{f.name}) #{f.name}
+                    a(href='http://192.168.1.240:3000/' + f.path) #{f.name}
                   td
                     p #{f.path}  
+              if directorio
+                tr
+                  td
+                    a(href='http://192.168.1.240:3000/' + f.path) #{f.name}
+                  td
+                    p #{f.path}
                     

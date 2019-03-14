@@ -1,0 +1,22 @@
+{
+  "name": "node-fileserver",
+  "version": "1.0.0",
+  "description": "* Ignora archivos ocultos (que comienzan con .) * Actualmente comparte solo los archivos en el directorio especificado en ./file_server/config.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viejocadillac/Node-File-Server--v1.0.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viejocadillac/Node-File-Server--v1.0.0/issues"
+  },
+  "homepage": "https://github.com/viejocadillac/Node-File-Server--v1.0.0#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1"
+  }
+}
