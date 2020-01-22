@@ -1,22 +1,22 @@
 {
-  "name": "Node-File-Server--v1.2.0",
-  "version": "1.0.0",
-  "description": "* Ignora archivos ocultos (que comienzan con .)\r * Actualmente comparte solo los archivos en el directorio especificado en ./file_server/config.json",
+  "name": "Node-File-Server--v2.0.0",
+  "version": "2.0.0",
+  "description": "Crea un servidor node/express para compartir archivos en local",
   "main": ".eslintrc.js",
   "scripts": {
     "start": "nodemon app.js -p ./ --showHidden"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viejocadillac/Node-File-Server--v1.2.0.git"
+    "url": "git+https://github.com/viejocadillac/Node-File-Server--v2.0.0.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/viejocadillac/Node-File-Server--v1.2.0/issues"
+    "url": "https://github.com/viejocadillac/Node-File-Server--v2.0.0/issues"
   },
-  "homepage": "https://github.com/viejocadillac/Node-File-Server--v1.2.0#readme",
+  "homepage": "https://github.com/viejocadillac/Node-File-Server--v2.0.0#readme",
   "dependencies": {
     "eslint": "^6.8.0",
     "express": "^4.17.1",
