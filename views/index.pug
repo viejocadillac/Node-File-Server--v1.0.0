@@ -1,0 +1,41 @@
+eebhtml
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Element - File Server
+    link(href=`${base}/styles/bootstrap.min.css` rel='stylesheet')
+    link(href=`${base}/styles/style.css` rel='stylesheet')
+
+    script(src=`${base}/scripts/main.js` type= 'application/javascript')
+  
+  body
+    div.container
+      h3 Bienvenido a Element FileServer
+      h6 Los siguientes archivos estan disponibles para su descarga:
+      
+      table.table.table-striped
+        thead
+          tr
+            th Nombre
+            th Ruta
+
+        tbody
+          - vacio = files != undefined;
+          if vacio
+            each file in files
+              - archivo = file.type == "file";
+              - directorio = file.type == "directory";
+               
+              if archivo
+                tr
+                  td
+                    a(href=`${base}/${file.path}`) #{file.name}
+                  td
+                    p #{file.path}  
+              if directorio
+                tr
+                  td
+                    a(href=`${base}/${file.path}` class='directory') #{file.name}
+                  td
+                    p #{file.path}
+                    
