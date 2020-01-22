@@ -1,4 +1,4 @@
-# :file_folder: Node-File-Server--v2.0.0
+# :file_folder: Node-File-Server
 ## Crea un servidor NodeJS para compartir los archivos en la ruta especificada.
 * Ignora archivos que comienzan con . (Opcional)
 * Comparte los archivos y directorios recursivamente que se encuentren en la ruta especificada con el flag -p
@@ -11,8 +11,8 @@ node
 
 ### Instalacion 🔧
 ```shell
-$ git clone https://github.com/viejocadillac/Node-File-Server--v2.0.0.git
-$ cd ./Node-File-Server--v2.0.0
+$ git clone https://github.com/viejocadillac/Node-File-Server.git
+$ cd ./Node-File-Server
 $ npm install
 ```
 ### Compartiendo archivos 🚀
