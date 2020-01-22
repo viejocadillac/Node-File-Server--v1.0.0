@@ -13,9 +13,7 @@ router.get("/*", (req, res) => {
     res.render("index", { files: data, base });
   } else {
     let pathDecoded = decodeURI(req.path);
-    console.log(`Path decoded: ${pathDecoded}`);
     let pathToRead = './' + path.join(argv.p, pathDecoded);
-    console.log(`Path to read: ${pathToRead}`);
 
     if (fs.lstatSync(pathToRead).isFile()) {
       // Si es un archivo lo manda para su descarga

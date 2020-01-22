@@ -1,8 +1,18 @@
 const express = require('express');
 const path = require('path');
+const network = require('network');
+const process = require('process');
 const app = express();
 const server = require("http").createServer(app);
 const index = require('./routes/index.js');
+
+console.log('Iniciando el servidor...')
+const PORT = process.env.PORT || 3000
+network.get_active_interface((err, ip)=>{
+  server.listen(PORT, ()=>{
+    console.log(`Servidor Activo en la IP ${ip.ip_address} y el puerto ${PORT}`);
+  });
+})
 
 
 function ignoreFavicon(req, res, next) {
@@ -23,15 +33,6 @@ app.use('/styles', express.static(path.join(__dirname, '/public/stylesheets')));
 
 app.use('/', index);
 
-server.listen(3000, ()=>{
-  let ip = server.address().address;
 
-  if(ip == '::'){
-    ip = '127.0.0.1'
-  }
-  console.log('Servidor Activo en la IP '+ip+' y el puerto '+server.address().port);
-
-
-});
 
 module.exports=app;

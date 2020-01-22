@@ -5,7 +5,6 @@ const process = require("process");
 const argv = require("minimist")(process.argv.slice(2), {boolean:['showHidden']});
 
 const showHidden = argv.showHidden;
-console.log(argv)
 
 function actualPathSync(_path) {
   let files = [{}];
@@ -27,8 +26,6 @@ function actualPathSync(_path) {
         url: encodeURI(names[i])
       });
       }
-
-  
     }
     return files;
 
