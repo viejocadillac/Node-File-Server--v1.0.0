@@ -4,7 +4,7 @@
   "description": "* Ignora archivos ocultos (que comienzan con .)\r * Actualmente comparte solo los archivos en el directorio especificado en ./file_server/config.json",
   "main": ".eslintrc.js",
   "scripts": {
-    "start": "nodemon app.js -p ./"
+    "start": "nodemon app.js -p ./ --showHidden"
   },
   "repository": {
     "type": "git",

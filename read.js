@@ -2,7 +2,10 @@
 const fs = require("fs");
 const path = require("path");
 const process = require("process");
-const argv = require("minimist")(process.argv.slice(2));
+const argv = require("minimist")(process.argv.slice(2), {boolean:['showHidden']});
+
+const showHidden = argv.showHidden;
+console.log(argv)
 
 function actualPathSync(_path) {
   let files = [{}];
@@ -11,22 +14,10 @@ function actualPathSync(_path) {
     for (let i = 0; i < names.length; i++) {
       let absolutePathToFile = path.join(_path, names[i]);
 
-      let ruta = absolutePathToFile.replace(argv.p.substr(2), ""); //.substr(1);
-      /*
+      let ruta = absolutePathToFile.replace(argv.p.substr(2), "");
 
-      console.log(`Absolute path: ${absolutePathToFile}`);
-      console.log(
-        `Absolute path replaced: ${absolutePathToFile.replace(argv.p, "")}`
-      );
-      console.log(`Argv.f: ${argv.p}`);
-      console.log(`Argv.f substr: ${argv.p.substr(2)}`);
-      console.log("_path: ", _path);
-      console.log(`Name: ${names[i]}`);
-      console.log(`Ruta: ${ruta}`);
-      console.log("----------------------------------------");
-      */
-
-      let type = fs.lstatSync(absolutePathToFile).isDirectory()
+      if(names[i][0] !== '.' || showHidden){
+        let type = fs.lstatSync(absolutePathToFile).isDirectory()
         ? "directory"
         : "file";
       files.push({
@@ -35,8 +26,12 @@ function actualPathSync(_path) {
         name: names[i],
         url: encodeURI(names[i])
       });
+      }
+
+  
     }
     return files;
+
   } catch (e) {
     if (e.code === "EACCES") {
       console.log(
